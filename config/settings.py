@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'django_examples.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django_examples.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
+ASGI_APPLICATION = 'config.asgi.application'
 
 
 # Database
@@ -85,14 +86,15 @@ WSGI_APPLICATION = 'django_examples.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_ex',            # データベース名
-        'USER': 'progres',              # ユーザ名
+        # 'NAME': 'django_example',       # データベース名
+        'NAME': 'django_study',         # データベース名
+        'USER': 'postgres',             # ユーザ名
         'PASSWORD': '5150',             # パスワード
         'HOST': 'localhost',            # ホスト（IPアドレスまたはホスト名）
         'PORT': '5432',                 # ポート（デフォルトは5432）
-        'OPTIONS': {
-            'client_encoding': 'UTF8',
-        },
+        # 'OPTIONS': {
+        #     'client_encoding': 'UTF8',
+        # },
         'TIME_ZONE': 'Asia/Tokyo',      # 日本時間の場合
         'USE_TZ': True,                 # タイムゾーンを有効にする
     }
